@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    overflow:hidden;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+    width:100%;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    color:white;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+    animation:fadeIn 1.5s ease;
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.heart{
+    color:#ff4d6d;
+    animation:beat 1s infinite;
+}
+
+p{
+    line-height:1.8;
+    font-size:1rem;
+    margin-top:20px;
+}
+
+.btn{
+    margin-top:25px;
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.footer{
+    margin-top:20px;
+    font-weight:600;
+    color:#ffd166;
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:2rem;
+    }
+
+    p{
+        font-size:0.95rem;
+    }
+
+    .container{
+        padding:25px 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Happy Father's Day <span class="heart">❤️</span></h1>
+
+    <h3>Dear Dad,</h3>
+
+    <p>
+        Today I just want to say thank you for everything.
+        Thank you for your love, sacrifices, guidance, and support.
+        I know there have been times when I made mistakes and may have
+        disappointed you, and for that I am truly sorry.
+        Please know that I have always tried my best and will continue
+        working hard to make you proud.
+        <br><br>
+        You are my hero, my role model, and my biggest blessing.
+        I am grateful for every lesson, every laugh, and every memory we share.
+        No matter what happens, I will always love and respect you.
+    </p>
+
+    <button class="btn" onclick="celebrate()">
+        Click for Love 🎉
+    </button>
+
+    <div class="footer">
+        Love You Dad ❤️
+    </div>
+</div>
+
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script>
+function celebrate(){
+
+    var duration = 4000;
+    var end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 4,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0 }
+        });
+
+        confetti({
+            particleCount: 4,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
+
+    // Extra burst
+    confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
+}
+
+window.onload = () => {
+    setTimeout(() => {
+        celebrate();
+    }, 800);
+};
+</script>
+
+</body>
+</html>
